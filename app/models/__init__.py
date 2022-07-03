@@ -1,2 +1,3 @@
-from .user import User, SQLModel
-from .base import engine
+from .base import engine, SQLModel
+from .hobby import Hobby
+from .user import User

@@ -1,5 +1,5 @@
-from sqlmodel import SQLModel, Field
-from typing import Optional
+from sqlmodel import SQLModel, Field, Relationship
+from typing import Optional, List
 from app import utils
 
 class User(SQLModel, table=True):
@@ -7,3 +7,5 @@ class User(SQLModel, table=True):
     fname: str
     lname: Optional[str] = None
     description: Optional[str] = None
+
+    hobbies: List["Hobby"] = Relationship(back_populates="hobby")
